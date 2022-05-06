@@ -39,3 +39,12 @@
 	padding-right : 2em;
 	color:red;
 }
+
+.btnset{
+	padding-top: 3em;
+	display: flex;
+	justify-content: right;
+}
+.btnset > input{
+	margin-right : 1em;
+}
