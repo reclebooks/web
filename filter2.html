@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link href="style2.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://kit.fontawesome.com/5363d2ff29.js" crossorigin="anonymous"></script>
+
+
+<script>
+    $(document).ready(function(){ 
+    $("#spreadBtn").click(function(){ 
+        if($("#hiddenList").is(":visible")){
+            $("#spreadBtn").toggleClass("on off");
+            $("#hiddenList").slideUp(); 
+        }else {
+            $("#spreadBtn").toggleClass("off on");
+            $("#hiddenList").slideDown();
+        }
+    }
+); 
+}
+); 
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="searchFilter">
+            <div class="bar">
+            <input class="searchbar" type="text" >
+            <button class ="glass" type ="#" id="#"><img src="image/magnifying-glass-solid.svg" width="20px" height="20px"></button>
+            </div>
+            <div class=filter>
+            <p class= "on" id ="spreadBtn">필터</p>
+            </div>
+        </div>
+        <div id="hiddenList">
+        <ul class="ks-cboxtags">
+            <p>대학</p>
+            <li><input type="checkbox" id="checkboxOne" value="#"><label for="checkboxOne">서울대</label></li>
+            <li><input type="checkbox" id="checkboxTwo" value="#" checked><label for="checkboxTwo">연세대</label></li>
+            <li><input type="checkbox" id="checkboxThree" value="#" checked><label for="checkboxThree">고려대</label></li>
+            <li><input type="checkbox" id="checkboxFour" value="#"><label for="checkboxFour">충북대</label></li>
+            <li><input type="checkbox" id="checkboxFive" value="#"><label for="checkboxFive">충남대</label></li>
+            <li><input type="checkbox" id="checkboxSix" value="#"><label for="checkboxSix">부산대</label></li>
+            <li><input type="checkbox" id="checkboxSeven" value="#"><label for="checkboxSeven">경북대</label></li>
+            <li><input type="checkbox" id="checkboxEight" value="#"><label for="checkboxEight">강원대</label></li>
+            <li><input type="checkbox" id="checkboxNine" value="#"><label for="checkboxNine">전남대</label></li>
+            <li><input type="checkbox" id="checkboxTen" value="#"><label for="checkboxTen">강원대</label></li>
+        </ul>
+        <ul class="ks-cboxtags">
+            <p>단과대</p>
+            <li><input type="checkbox" id="checkboxEleven" value="#"><label for="checkboxEleven">경영대</label></li>
+            <li><input type="checkbox" id="checkboxTwelve" value="#" checked><label for="checkboxTwelve">자연대</label></li>
+            <li><input type="checkbox" id="checkboxThirteen" value="#" checked><label for="checkboxThirteen">전정대</label></li>
+            <li><input type="checkbox" id="checkboxFourteen" value="#"><label for="checkboxFourteen">인문대</label></li>
+            <li><input type="checkbox" id="checkboxFifteen" value="#"><label for="checkboxFifteen">사회과학대</label></li>
+            <li><input type="checkbox" id="checkboxSixteen" value="#"><label for="checkboxSixteen">의대</label></li>
+            <li><input type="checkbox" id="checkboxSeventeen" value="#"><label for="checkboxSeventeen">수의대</label></li>
+            <li><input type="checkbox" id="checkboxEightteen" value="#"><label for="checkboxEightteen">약대</label></li>
+        </ul>
+        </div>
+    </div>
+
+</body>
+</html>
