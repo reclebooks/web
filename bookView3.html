@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="style/view3.css">
+<link rel="import" href="./header.html">
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="./header.js"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+    rel="stylesheet"
+  />
+<script
+    src="https://kit.fontawesome.com/5363d2ff29.js"
+    crossorigin="anonymous"
+></script>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="background">
+      <div class="window">
+        <div class="popup">
+          <div id="popup_img">
+          </div>
+        </div>
+        <div class="btn_left">
+          <a onclick="next_left()">
+          <img src="img/btn_left.png"></a>
+        </div>
+        <div class="btn_right">
+          <a onclick="next_right()">
+          <img src="img/btn_right.png"></a>
+        </div>
+      </div>
+    </div>
+	<div class="wrapContents">
+    <div><h2 class="bookName">Operating System</h2></div>
+		<div class="imgView">
+      <a onclick="show(1)">
+        <img id="1" class="imglist" src="img/img1.png"></a>
+      <a onclick="show(2)">
+        <img id="2" class="imglist" src="img/img2.png"></a>
+      <a onclick="show(3)">
+        <img id="3" class="imglist" src="img/img3.png"></a>
+      <a onclick="show(4)">
+        <img id="4" class="imglist" src="img/img4.png"></a>
+      <a onclick="show(5)">
+        <img id="5" class="imglist" src="img/img5.png"></a>
+		</div>
+		<hr>
+		<div class="info">
+			<div class="seller">
+				<img src="img/thumbnail.png">
+				<div class="sellerContents">
+					<p>판매자</p>
+					<p>거래점수</p>
+					<p>판매 가격</p>
+				</div>
+			</div>
+			<div>
+				<p>저자 : 홍길동</p>
+				<p>출판사 : 미디어북스</p>
+				<p>출판일 : 2020.08.14</p>
+			</div>
+			<div class="boardContents">
+				<h1>책상태</h1>
+				<table class="stateTable">
+					<tr>
+						<td class="col1">밑줄 흔적</td>
+						<td>없음</td>
+						<td>연필/샤프</td>
+						<td>볼펜/형광펜</td>
+					</tr>			
+					<tr>
+						<td class="col1">필기 흔적</td>
+						<td>없음</td>
+						<td>연필/샤프</td>
+						<td>볼펜/형광펜</td>
+          </tr>		
+					<tr>
+						<td class="col1">겉표지</td>
+						<td>깨끗함</td>
+						<td>보통</td>
+						<td>깨끗하지 않음</td>
+					</tr>
+					<tr>
+						<td class="col1">페이지훼손</td>
+						<td>없음</td>
+						<td>있음</td>
+						<td> </td>
+					</tr>
+				</table>
+				<div class="btnset">
+					<input type="button" value="관심등록">
+					<input type="button" value="채팅하기">
+				</div>
+			</div>
+		</div>
+    <hr>
+    <p>상세내용 적는 란</p>
+	</div>
+    <script>
+      var img_num = 0;
+        function show(i) {
+          img_num = i;
+          document.querySelector(".background").className = "background show";
+          document.getElementById('popup_img').innerHTML = '<img src="img/img'+ i + '.png"><input type="button" id="popup_close" onclick="popup_close()" value="X">';
+        }
+
+        function popup_close() {
+          document.querySelector(".background").className = "background";
+        }
+
+        function next_left(){
+          if (img_num > 1){
+            img_num -= 1;
+          }
+          var src = document.getElementById(img_num).src;
+          index = src.indexOf('img');
+          path = src.substr(index);
+          document.getElementById('popup_img').innerHTML = '<img src="'+ path + '"><input type="button" id="popup_close" onclick="popup_close()" value="X">';
+        }
+        
+        function next_right(){
+          var len = document.getElementsByClassName("imglist").length;
+          if (img_num < len){
+            img_num += 1;
+          }
+          var src = document.getElementById(img_num).src;
+          index = src.indexOf('img');
+          path = src.substr(index);
+          document.getElementById('popup_img').innerHTML = '<img src="'+ path + '"><input type="button" id="popup_close" onclick="popup_close()" value="X">';
+        }
+
+      </script>
+</body>
+</html>
+<script type="text/javascript">
+  const content = document.querySelector('link[rel="import"]').import;
+  document.querySelector('#header').innerHTML = header;
+  $(document).ready(function(){ 
+  $("#spreadBtn").click(function(){ 
+      if($("#hiddenList").is(":visible")){
+          $("#spreadBtn").toggleClass("on off");
+          $("#hiddenList").slideUp(); 
+      }else {
+          $("#spreadBtn").toggleClass("off on");
+          $("#hiddenList").slideDown();
+      }
+  }
+); 
+}
+); 
+</script>

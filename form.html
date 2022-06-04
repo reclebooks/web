@@ -1,0 +1,107 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5363d2ff29.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="./style/form.css">
+
+</head>
+<body>
+<form id = sell>
+    <div class="container">
+        <div class="book_info">
+            <h2>책정보</h2>
+            <p>
+                <input class="text " type="text" name = "bookTitle" value="운영체제">
+            </p>
+            <p>
+                <input class="text " type="text" name ="bookAuthor" value="Abraham Silberschatz, Peter Baer Galvin, Greg Gagne">
+            </p>
+            <p>
+                <input class="text " type="text" name="bookPublisher"value="퍼스트북">
+            </p>
+            <p>
+                <input class="text " type="text" name="bookPubDate" value="퍼스트북">
+            </p>
+            <p>
+                <input class="text " type="text" name="bookPrice" value="39000">
+            </p>
+        </div>
+        <div class="book_univ">
+            <h2>학교, 전공</h2>
+            <p>
+                <input class="text" type="text" name="uniName" style= "text-align:center" value="충북대">
+            </p>
+            <br>
+            <p>
+                <input class="text" type="text" name="Major" style= "text-align:center" value="전공">
+            </p>
+            <p class="plus">
+                <button type="button" id="btn_plus" ><img src="./img/plus.png" height ="30px" width="30px" > </button>
+            </p>
+        
+        </div>
+        <div class="book_lecture">
+            <h2>어떤 수업에서 사용한 책인가요? </h2>
+            <p>
+                <input class="text" type="text" name="Major" style= "text-align:center" value="과목명">
+            </p>
+        </div>
+        <div class="book_status">
+            <h2>필기한 흔적이 있나요?</h2>
+            <ol>
+                <li>
+                <input type="checkbox" name="checkedValue1" value="1"/><label for="a">밑줄 연필 / 샤프</label>
+                </li> 
+                <li>
+                <input type="checkbox" name="checkedValue2" value="1"/><label for="a">밑줄 볼펜 / 형광펜</label>
+                </li>
+                <li>
+                <input type="checkbox" name="checkedValue3" value="1"/><label for="a">필기 연필 / 샤프</label>
+                </li>         
+                <li>
+                <input type="checkbox" name="checkedValue4" value="1"/><label for="a">필기 볼펜 / 형광펜</label>
+                </li>   
+                <li>
+                <input type="checkbox" name="checkedValue5" value="1"/><label for="a">겉표지</label>
+                </li>   
+                <li>
+                <input type="checkbox" name="checkedValue6" value="1"/><label for="a">페이지</label>
+                </li>         
+            </ol>
+        </div>
+        <div class="book_status_image">
+            <h2>실제 사진을 찍어주세요 </h2>
+            <div class="book_image">
+                <img src="./img/photo.png" width="185" height="185">
+                <img src="./img/photo.png" width="185" height="185">
+                <img src="./img/photo.png" width="185" height="185">
+                <img src="./img/photo.png" width="185" height="185">
+            </div>
+        </div>
+            
+        <div class="book_price">
+            <h2>희망 가격</h2>
+            <p>
+                <input class="text " type="text" name="bookPrice" value="( 단위 : 원 )">
+            </p>
+        </div>
+        
+        <div class="book_registration">
+            <p>
+                <input type="submit"  name="#" value="등록하기">
+            </p>
+        </div>
+    </div>
+</form>
+    <script>
+       $(document).ready(function(){
+           $("#btn_plus").on("click", function(){
+               var plus = '<p> <input class="text" type="text" name="Major"   style= "text-align:center" value="전공"> </p>'
+               $(".plus").prepend(plus);
+           }) 
+
+    })
+    </script>
+</body>
+</html>
