@@ -14,13 +14,8 @@
 	opacity: 1;
 }
 
-
-.wrapContents{
-  margin-top: 120px;
-}
 .signboard{
   background-color: #f5f5f5;
-  margin-top:5em;
   margin-bottom: 2em;
 }
 
@@ -251,6 +246,7 @@ ul.ks-cboxtags {
   }
 
 .wrapContents{
+  padding-top:7em;
 	max-width:80%;
 	margin:auto;
   display: flex;
