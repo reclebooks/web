@@ -1,7 +1,7 @@
 
 const generateBookElement = (usedBookDto)=>{
     const {id, usedBookCost, image} = usedBookDto;
-    const {cost, name, colleges} = usedBookDto.book;
+    const {cost, name, colleges, lectures} = usedBookDto.book;
     return `<div class="bookElement">
     <a href="${serverUrl}/used/${id}">
     <section>
@@ -13,7 +13,7 @@ const generateBookElement = (usedBookDto)=>{
         >
             <section class="book-kind blur">
                 <section class="description-box">
-                    <article class="lecture">기초컴퓨터프로그래밍</article>
+                    <article class="lecture">${lectures[0]}</article>
                     <article class="book-name">
                         ${name}
                     </article>
