@@ -7,8 +7,8 @@ const header = `
 
 
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ml-2 mt-1" href="main.html"><img src="./img/recle.png" width="90px" height="75px"></a>
+    <nav id="top-bar" class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand ml-2 mt-1" href="index.html"><img src="./img/recle.png" width="90px" height="75px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>

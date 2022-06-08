@@ -43,5 +43,7 @@ const search = async ()=>{
 
 const loadUsedBooks = async() => {
     const books = await search();
-    books.forEach(book=>document.querySelector('.bookGrid').)
-}
+    books.forEach(book=>document.querySelector('.bookGrid').appendChild(generateBookElement(book)))}
+
+
+loadUsedBooks();

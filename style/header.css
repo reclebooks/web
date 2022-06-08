@@ -4,6 +4,10 @@ body{
 
 }
 
+#top-bar{
+    z-index:1;
+}
+
 .container {
     margin: auto;
     max-width: 1000px;
