@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>리클북스</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style/chat.css">
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+<!-- partial:index.partial.html -->
+<body>
+  <div class="container">
+    <div class="row">
+      
+      <section class="discussions">
+        <div class="discussion search">
+          <div class="searchbar">  <!-- 자기 닉네임? 이름?-->
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" placeholder="Search..."></input>
+          </div>
+        </div>
+
+      <div class="roomList">
+      </div>
+        
+      <!-- 라인 -->
+      </section>
+      <section class="chat">
+          <div class="header-chat">
+          <i class="icon fa fa-user-o" aria-hidden="true"></i>
+          <p class="name" id="participants">대화상대</p>
+          <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+        </div>
+        <div class="messages-chat">
+        </div>
+        <div class="footer-chat">
+          <i class="icon fa fa-smile-o clickable" style="font-size:25pt;" aria-hidden="true"></i>
+          <input type="text" class="write-message" placeholder="메시지를 입력하세요"></input>
+          <i class="icon send fa fa-paper-plane-o clickable" aria-hidden="true"></i>
+        </div>
+      </section>
+    </div>
+  </div>
+<!-- partial -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="./chat.js"></script>
+
+</body>
+</html>
