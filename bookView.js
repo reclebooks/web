@@ -1,21 +1,17 @@
 const generateViewElement = (usedBookDto)=>{
     const {id, usedBookCost, image, seller, underline, penUnderline, note, penNote, bookCoverStatus, pageStatus} = usedBookDto;
     const {cost, name, publisher, author, publishedDate} = usedBookDto.book;
+    var imgTags;
+    image.forEach((img,index,arr) => {
+        imgTags += `<a onclick="show(${index})">
+        <img id="img${index}" class="imglist" src="${img}"></a>`;
+    });
 
     return `
     <div><h2 class="bookName">${name}</h2></div>
     <div class="imgView">
     <!--이미지 갯수만큼 생성해야함-->
-    <a onclick="show(1)">
-    <img id="1" class="imglist" src="img/img1.png"></a>
-    <a onclick="show(2)">
-    <img id="2" class="imglist" src="img/img2.png"></a>
-    <a onclick="show(3)">
-    <img id="3" class="imglist" src="img/img3.png"></a>
-    <a onclick="show(4)">
-    <img id="4" class="imglist" src="img/img4.png"></a>
-    <a onclick="show(5)">
-    <img id="5" class="imglist" src="img/img5.png"></a>
+    ${imgTags}
     </div>
     <hr>
     <div class="info">
