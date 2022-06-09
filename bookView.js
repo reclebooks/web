@@ -67,6 +67,6 @@ const loadUsedBook = async() => {
     // 책 정보 하나 가져와서 wrapContents에 삽입
     const book = await fetch(`책 정보 url`);
     book=>document.querySelector('.wrapContents').appendChild(generateBookElement(book))
-}
+} 
 
 loadUsedBook();
