@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Recle Books</title>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <link
     href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
     rel="stylesheet"
@@ -41,4 +42,17 @@
 <script type="text/javascript">
     const content = document.querySelector('link[rel="import"]').import;
     document.querySelector('#header').innerHTML = header;
-  </script>
+    $(document).ready(function(){    
+    $("#spreadBtn").click(function(){ 
+        if($("#hiddenList").is(":visible")){
+            $("#spreadBtn").toggleClass("on off");
+            $("#hiddenList").slideUp(); 
+        }else {
+            $("#spreadBtn").toggleClass("off on");
+            $("#hiddenList").slideDown();
+        }
+    }
+); 
+}
+); 
+</script>
