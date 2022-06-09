@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Recle Books</title>
-<link rel="stylesheet" type="text/css" href="css/view3.css">
-<script src="./data.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="style/view3.css">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,6 +20,7 @@
 ></script>
 </head>
 <body>
+    <div id="header"></div>
 	<div class="wrapContents">
         <div class="signboard">
             <img src="img/signboard.png">
@@ -35,3 +35,10 @@
 </body>
 </html>
 <script src="./index.js"></script>
+<link rel="import" href="./header.html">
+<script src="./data.js"></script>
+<script src="./header.js"></script>
+<script type="text/javascript">
+    const content = document.querySelector('link[rel="import"]').import;
+    document.querySelector('#header').innerHTML = header;
+  </script>
