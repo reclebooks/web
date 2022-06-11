@@ -19,6 +19,7 @@
     src="https://kit.fontawesome.com/5363d2ff29.js"
     crossorigin="anonymous"
 ></script>
+<script type="module" src="./constants.js"></script>
 </head>
 <body>
     <div id="header"></div>
@@ -29,30 +30,14 @@
         <h2>중고 전공서적</h2>
         <div class="bookList">
             <div class="bookGrid">
-                
             </div>
         </div>
     </div>
 </body>
 </html>
-<script src="./index.js"></script>
+<script type="module" src="./index.js"></script>
 <link rel="import" href="./header.html">
-<script src="./data.js"></script>
-<script src="./header.js"></script>
+<script type="module" src="./header.js"></script>
 <script type="text/javascript">
-    const content = document.querySelector('link[rel="import"]').import;
-    document.querySelector('#header').innerHTML = header;
-    $(document).ready(function(){    
-    $("#spreadBtn").click(function(){ 
-        if($("#hiddenList").is(":visible")){
-            $("#spreadBtn").toggleClass("on off");
-            $("#hiddenList").slideUp(); 
-        }else {
-            $("#spreadBtn").toggleClass("off on");
-            $("#hiddenList").slideDown();
-        }
-    }
-); 
-}
-); 
+
 </script>

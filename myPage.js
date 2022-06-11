@@ -1,7 +1,16 @@
-const initialize = async () => {
-    const {nickname, description} = await fetch('닉네임 받는 URL').then(data => data.json());
+import { serverUrl } from "./constants.js";
 
-    document.querySelector('#nickname').textContent = await fetch('');
+const initialize = async () => {
+    const user = await fetch(`${serverUrl}/auth/me`, {
+        method: "GET",
+        headers: {
+            "x-access-token": localStorage.getItem('reclebooksToken')
+       } 
+    }).then(data => data.json()).then(body=> body.data);
+    console.log(user);
+    document.querySelector('#nickname').textContent = user.nickname;
+    document.querySelector('.user-description').textContent = user.description;
+    document.querySelector('.mp_score_value').textContent = user.reputationScore;
 }
 
 
@@ -67,4 +76,10 @@ const loadSellList = async() => {
 const loadLikeList = async() => {
     const books = await fetch('관심목록 url');
     cleanElements();
-    books.forEach(book=>document.querySelector('.bookGrid').appendChild(generateBookElement(book)))}
+    books.forEach(book => document.querySelector('.bookGrid').appendChild(generateBookElement(book)))
+}
+
+$(document).ready(function () {
+    initialize();
+
+});

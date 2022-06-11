@@ -1,308 +1,267 @@
 <html>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/5363d2ff29.js" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <link rel="stylesheet" href="./style/form.css">
+    <head>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/5363d2ff29.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <link rel="stylesheet" href="./style/form.css" />
+        <script type="module" src="constants.js"></script>
+        <link rel="import" href="./header.html" />
+        <style>
+            .wrapBookImage {
+                text-align: center;
+                margin: 0 auto;
+            }
+            .book_image {
+                display: inline-block;
+                text-align: center;
+                margin: 10 0 auto;
+            }
 
-</head>
+            #att_zone {
+                width: auto;
+                min-height: 202px;
+                max-height: 202px;
+                padding: 10px;
+                border: 1px dotted grey;
+                overflow: scroll;
+                overflow-x: hidden;
+            }
+            #att_zone::-webkit-scrollbar {
+                width: 10px;
+            }
+            #att_zone::-webkit-scrollbar-thumb {
+                background-color: #2f3542;
+                border-radius: 10px;
+                background-clip: padding-box;
+                border: 2px solid transparent;
+            }
+            #att_zone::-webkit-scrollbar-track {
+                background-color: grey;
+                border-radius: 10px;
+                box-shadow: inset 0px 0px 5px white;
+            }
 
-<style>
-    .wrapBookImage{
-        text-align: center;
-         margin: 0 auto;
-    }
-    .book_image{
-        display: inline-block;
-        text-align: center; 
-        margin: 10 0 auto;
-    }
+            #att_zone:empty:before {
+                content: attr(data-placeholder);
+                color: #999;
+                font-size: 0.9em;
+            }
+        </style>
+    </head>
 
-    #att_zone {
+    <body>
+        <div id="header"></div>
+        <div class="nav" style="text-align: center">
+            <a href="index.html">
+                <img
+                    style="width: 120px; height: 100px"
+                    src="./img/recle.png"
+                />
+            </a>
+        </div>
+        <form id="sell">
+            <div class="container">
+                <div class="book_info">
+                    <h2>책정보</h2>
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.name"
+                            value="운영체제"
+                        />
+                    </p>
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.author.name"
+                            value="Abraham Silberschatz, Peter Baer Galvin, Greg Gagne"
+                        />
+                    </p>
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.publisher.name"
+                            value="퍼스트북"
+                        />
+                    </p>
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.publishedDate"
+                            value="2022-03-04"
+                        />
+                    </p>
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.cost"
+                            value="39000"
+                        />
+                    </p>
+                </div>
+                <div class="book_univ">
+                    <h2>학교, 전공</h2>
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.college.name"
+                            style="text-align: center"
+                            value="충북대"
+                        />
+                    </p>
+                    <br />
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.majorCollege.name"
+                            style="text-align: center"
+                            value="전정대"
+                        />
+                    </p>
+                    <br />
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.major.name"
+                            style="text-align: center"
+                            value="소프트웨어"
+                        />
+                    </p>
+                    <p class="plus">
+                        <button type="button" id="btn_plus">
+                            <img
+                                src="./img/plus.png"
+                                height="30px"
+                                width="30px"
+                            />
+                        </button>
+                    </p>
+                </div>
+                <div class="book_lecture">
+                    <h2>어떤 수업에서 사용한 책인가요?</h2>
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="book.lecture.name"
+                            style="text-align: center"
+                            value="선형대수학"
+                        />
+                    </p>
+                </div>
+                <div class="book_status">
+                    <h2>필기한 흔적이 있나요?</h2>
+                    <ol>
+                        <li>
+                            <input
+                                type="checkbox"
+                                name="underline"
+                                value="1"
+                            /><label for="a">밑줄 연필 / 샤프</label>
+                        </li>
+                        <li>
+                            <input
+                                type="checkbox"
+                                name="penUnderline"
+                                value="1"
+                            /><label for="a">밑줄 볼펜 / 형광펜</label>
+                        </li>
+                        <li>
+                            <input
+                                type="checkbox"
+                                name="note"
+                                value="1"
+                            /><label for="a">필기 연필 / 샤프</label>
+                        </li>
+                        <li>
+                            <input
+                                type="checkbox"
+                                name="penNote"
+                                value="1"
+                            /><label for="a">필기 볼펜 / 형광펜</label>
+                        </li>
+                        <li>
+                            <input
+                                type="checkbox"
+                                name="coverStatus"
+                                value="1"
+                            /><label for="a">겉표지</label>
+                        </li>
+                        <li>
+                            <input
+                                type="checkbox"
+                                name="pageStatus"
+                                value="1"
+                            /><label for="a">페이지 손상(접힘, 찢김)</label>
+                        </li>
+                    </ol>
+                </div>
 
-    width: auto;
-    min-height: 202px;
-    max-height: 202px;
-    padding: 10px;
-    border: 1px dotted grey;
-    overflow: scroll;
-    overflow-x: hidden;
-    }
-    #att_zone::-webkit-scrollbar {
-        width: 10px;
-    }
-    #att_zone::-webkit-scrollbar-thumb {
-        background-color: #2f3542;
-        border-radius: 10px;
-        background-clip: padding-box;
-        border: 2px solid transparent;
-    }
-    #att_zone::-webkit-scrollbar-track {
-        background-color: grey;
-        border-radius: 10px;
-        box-shadow: inset 0px 0px 5px white;
-    }
-
-    #att_zone:empty:before {
-    content: attr(data-placeholder);
-    color: #999;
-    font-size: .9em;
-    }
-</style>
-   
-<body>   
-    <div class="nav" style="text-align:center;">
-        <a href="index.html" >
-        <img style=" width: 120px; height: 100px" src="./img/recle.png">
-        </a>
-    </div>
-    <form id = sell >
-        <div class="container">
-            <div class="book_info">
-                <h2>책정보</h2>
-                <p>
-                    <input class="text " type="text" name = "book.name" value="운영체제">
-                </p>
-                <p>
-                    <input class="text " type="text" name ="book.author.name" value="Abraham Silberschatz, Peter Baer Galvin, Greg Gagne">
-                </p>
-                <p>
-                    <input class="text " type="text" name="book.publisher.name"value="퍼스트북">
-                </p>
-                <p>
-                    <input class="text " type="text" name="book.publishedDate" value="날짜">
-                </p>
-                <p>
-                    <input class="text " type="text" name="book.cost" value="39000">
-                </p>
-            </div>
-            <div class="book_univ">
-                <h2>학교, 전공</h2>
-                <p>
-                    <input class="text" type="text" name="book.colleges[0]" style= "text-align:center" value="충북대">
-                </p>
-                <br>
-                <p>
-                    <input class="text" type="text" name="book.colleges[1]" style= "text-align:center" value="단과대">
-                </p>
-                <br>
-                <p>
-                    <input class="text" type="text" name="book.colleges[2]" style= "text-align:center" value="전공">
-                </p>
-                <p class="plus">
-                    <button type="button" id="btn_plus" ><img src="./img/plus.png" height ="30px" width="30px" > </button>
-                </p>
-            
-            </div>
-            <div class="book_lecture">
-                <h2>어떤 수업에서 사용한 책인가요? </h2>
-                <p>
-                    <input class="text" type="text" name="book.colleges[3]" style= "text-align:center" value="과목명">
-                </p>
-            </div>
-            <div class="book_status">
-                <h2>필기한 흔적이 있나요?</h2>
-                <ol>
-                    <li>
-                    <input type="checkbox" name="underline" value="1"/><label for="a">밑줄 연필 / 샤프</label>
-                    </li> 
-                    <li>
-                    <input type="checkbox" name="penUnderline" value="1"/><label for="a">밑줄 볼펜 / 형광펜</label>
-                    </li>
-                    <li>
-                    <input type="checkbox" name="note" value="1"/><label for="a">필기 연필 / 샤프</label>
-                    </li>         
-                    <li>
-                    <input type="checkbox" name="penNote" value="1"/><label for="a">필기 볼펜 / 형광펜</label>
-                    </li>   
-                    <li>
-                    <input type="checkbox" name="coverStatus" value="1"/><label for="a">겉표지</label>
-                    </li>   
-                    <li>
-                    <input type="checkbox" name="pageStatus" value="1"/><label for="a">페이지 손상(접힘, 찢김)</label>
-                    </li>         
-                </ol>
-            </div>
-            
-            <div class="book_status_image">
-    
-
-                <h2>실제 사진을 찍어주세요</h2>
-                <div id='image_preview'>
-                    
-                    <div id='att_zone'
-                        data-placeholder='파일을 첨부 하려면 파일 선택 버튼을 클릭하거나 파일을 드래그앤드롭 하세요'></div>
-                    <input type='file'  style="display: none;" id ='btnAtt' multiple='multiple' />
-                    <div style="text-align: center">
-                    <label for="btnAtt" ><img src="./img/plus1.png"  width="50px"height="45px"></label>
+                <div class="book_status_image">
+                    <h2>실제 사진을 찍어주세요</h2>
+                    <div id="image_preview">
+                        <div
+                            id="att_zone"
+                            data-placeholder="파일을 첨부 하려면 파일 선택 버튼을 클릭하거나 파일을 드래그앤드롭 하세요"
+                        ></div>
+                        <input
+                            type="file"
+                            style="display: none"
+                            id="btnAtt"
+                            multiple="multiple"
+                        />
+                        <div style="text-align: center">
+                            <label for="btnAtt"
+                                ><img
+                                    src="./img/plus1.png"
+                                    width="50px"
+                                    height="45px"
+                            /></label>
+                        </div>
                     </div>
                 </div>
-               
 
+                <div class="book_price">
+                    <h2>희망 가격</h2>
+                    <p>
+                        <input
+                            class="text"
+                            type="text"
+                            name="usedBookCost"
+                            value="23000"
+                        />
+                    </p>
+                </div>
+
+                <div class="book_registration">
+                    <p>
+                        <input
+                            type="button"
+                            class="book_regis"
+                            id="btn"
+                            value="등록하기"
+                        />
+                    </p>
+                </div>
             </div>
-                
-            <div class="book_price">
-                <h2>희망 가격</h2>
-                <p>
-                    <input class="text " type="text" name="usedbookcost" value="( 단위 : 원 )">
-                </p>
-            </div>
-            
-            <div class="book_registration">
-                <p>
-                    <input type="submit"  id="btn" value="등록하기">
-                </p>
-            </div>
-        </div>
-    </form>
+        </form>
 
-    <script>
-       $(document).ready(function(){
-           $("#btn_plus").on("click", function(){
-               var plus = '<p> <input class="text" type="text" name="Major"   style= "text-align:center" value="전공"> </p>'
-               $(".plus").prepend(plus);
-           }) 
-
-    })
-    </script>
-
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    jQuery.fn.serializeObject = function() {
-        var obj = null;
-        try{
-            if(this[0].tagName && this[0].tagName.toUpperCase() == "FORM" ) {
-                var arr = this.serializeArray();
-                if(arr){
-                    obj = {};
-                    jQuery.each(arr, function() {
-                        // obj의 key값은 arr의 name, obj의 value는 value값
-                        const properties = this.name.split('.');
-                        newobj = obj[properties[0]];
-                        if(!newobj) newobj = {};
-                        backup = newobj;
-                        properties.forEach((property, i, arr)=>{
-                            if(i){
-                                if(!newobj[property])newobj[property] = {};
-                                if(i == arr.length-1)newobj[property] = this.value;
-                                newobj = newobj[property];
-                            }
-                        })
-                        obj[properties[0]] = backup;
-                        if(properties.length == 1)obj[properties[0]] = this.value;
-                    });
-                }
-            }
-        }catch(e) {alert(e.message);}finally{}return obj;
-    };
-    $("#btn").click(function(){// 반환받은 obj를 JSON 객체로 변환
-        var jsonObj = JSON.stringify($("#form").serializeObject());
-        console.log(jsonObj);
-    });
-});
-
-
-</script>
-<script>
-    ( /* att_zone : 이미지들이 들어갈 위치 id, btn : file tag id */
-      imageView = function imageView(att_zone, btn){
-    
-        var attZone = document.getElementById(att_zone);
-        var btnAtt = document.getElementById(btn)
-        var sel_files = [];
-        
-        // 이미지와 체크 박스를 감싸고 있는 div 속성
-        var div_style = 'display:inline-block;position:relative;'
-                      + 'width:185px;height:185px;margin:4px;z-index:1';
-        // 미리보기 이미지 속성
-        var img_style = 'width:100%;height:100%;z-index:none';
-        // 이미지안에 표시되는 체크박스의 속성
-        var chk_style = 'width:30px;height:30px;position:absolute;font-size:24px;'
-                      + 'right:0px;bottom:0px;z-index:999;background-color:rgba(255,255,255,0.1);color:#f00';
-      
-        btnAtt.onchange = function(e){
-          var files = e.target.files;
-          var fileArr = Array.prototype.slice.call(files)
-          for(f of fileArr){
-            imageLoader(f);
-          }
-        }  
-        
-      
-        // 탐색기에서 드래그앤 드롭 사용
-        attZone.addEventListener('dragenter', function(e){
-          e.preventDefault();
-          e.stopPropagation();
-        }, false)
-        
-        attZone.addEventListener('dragover', function(e){
-          e.preventDefault();
-          e.stopPropagation();
-          
-        }, false)
-      
-        attZone.addEventListener('drop', function(e){
-          var files = {};
-          e.preventDefault();
-          e.stopPropagation();
-          var dt = e.dataTransfer;
-          files = dt.files;
-          for(f of files){
-            imageLoader(f);
-          }
-          
-        }, false)
-        
-        /*첨부된 이미리즐을 배열에 넣고 미리보기 */
-        imageLoader = function(file){
-          sel_files.push(file);
-          var reader = new FileReader();
-          reader.onload = function(ee){
-            let img = document.createElement('img')
-            img.setAttribute('style', img_style)
-            img.src = ee.target.result;
-            attZone.appendChild(makeDiv(img, file));
-          }
-          
-          reader.readAsDataURL(file);
-        }
-        
-        /*첨부된 파일이 있는 경우 checkbox와 함께 attZone에 추가할 div를 만들어 반환 */
-        makeDiv = function(img, file){
-          var div = document.createElement('div')
-          div.setAttribute('style', div_style)
-          
-          var btn = document.createElement('input')
-          btn.setAttribute('type', 'button')
-          btn.setAttribute('value', 'x')
-          btn.setAttribute('delFile', file.name);
-          btn.setAttribute('style', chk_style);
-          btn.onclick = function(ev){
-            var ele = ev.srcElement;
-            var delFile = ele.getAttribute('delFile');
-            for(var i=0 ;i<sel_files.length; i++){
-              if(delFile== sel_files[i].name){
-                sel_files.splice(i, 1);      
-              }
-            }
-            
-            dt = new DataTransfer();
-            for(f in sel_files) {
-              var file = sel_files[f];
-              dt.items.add(file);
-            }
-            btnAtt.files = dt.files;
-            var p = ele.parentNode;
-            attZone.removeChild(p)
-          }
-          div.appendChild(img)
-          div.appendChild(btn)
-          return div
-        }
-      }
-    )('att_zone', 'btnAtt')
-    
-    </script>
-</body>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="module" src="header.js"></script>
+        <script type="module" src="form.js"></script>
+    </body>
 </html>

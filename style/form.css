@@ -131,7 +131,7 @@ li{
     height: 40px;
     border : 2px solid;
 }
-input[type="submit"]{
+input[type="button"]{
     font-size:20px;
     width: 100px;
     height: 45px;

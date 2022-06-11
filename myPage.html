@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <title>Recle Books</title>
 <link rel="stylesheet" type="text/css" href="style/view3.css">
-<script src="./data.js"></script>
+
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="import" href="./header.html">
+<script type="module" src="./constants.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Recle Books</title>
 <link
@@ -20,7 +21,7 @@
     src="https://kit.fontawesome.com/5363d2ff29.js"
     crossorigin="anonymous"
 ></script>
-<script
+<script type="module"
 src="./header.js"
 ></script> 
 </head>
@@ -34,7 +35,7 @@ src="./header.js"
                     <img src="img/thumbnail.png">
                     <div class="mp_sellerContents">
                         <p><div id="nickname"></div>님의 책방입니다.</p>
-                        <p>소개글 블라블라</p>
+                        <p class="user-description">소개글 블라블라</p>
                     </div>
                 </div>
                 <div class="mp_score">
@@ -58,21 +59,6 @@ src="./header.js"
     </div>
 </body>
 </html>
-<script src="./myPage.js"></script>
-<script type="text/javascript">
-    const content = document.querySelector('link[rel="import"]').import;
-    document.querySelector('#header').innerHTML = header;
-    $(document).ready(function(){    
-    $("#spreadBtn").click(function(){ 
-        if($("#hiddenList").is(":visible")){
-            $("#spreadBtn").toggleClass("on off");
-            $("#hiddenList").slideUp(); 
-        }else {
-            $("#spreadBtn").toggleClass("off on");
-            $("#hiddenList").slideDown();
-        }
-    }
-); 
-}
-); 
-</script>
+
+<script type="module" src="./myPage.js"></script>
+

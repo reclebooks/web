@@ -1,1 +1,1 @@
-const serverUrl = "";
+export const serverUrl = "http://ip-172-31-46-187.ap-northeast-2.compute.internal";
